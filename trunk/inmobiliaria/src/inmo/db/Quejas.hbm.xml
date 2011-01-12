@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="inmo.db.Quejas" table="quejas" catalog="inmobiliaria">
+        <id name="idQuejas" type="java.lang.Integer">
+            <column name="idQuejas" />
+            <generator class="increment" />
+        </id>
+        <property name="descripcion" type="java.lang.String">
+            <column name="descripcion"/>
+        </property>
+        <property name="comentarios" type="java.lang.String">
+            <column name="comentarios" />
+        </property>
+        <many-to-one name="empleado" class="inmo.db.Empleado" fetch="select">
+            <column name="Receptor" />
+        </many-to-one>
+        <many-to-one name="persona" class="inmo.db.Persona" fetch="select">
+            <column name="Responsable" />
+        </many-to-one>
+        <many-to-one name="motivo" class="inmo.db.Motivo" fetch="select">
+            <column name="Motivo" />
+        </many-to-one>
+        <many-to-one name="contratos" class="inmo.db.Contratos" fetch="select">
+            <column name="Contrato" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

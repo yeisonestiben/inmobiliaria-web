@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="ConsultarPropiedad" type="inmo.pagebeans.ConsultarPropiedadBean" />
+        <form-bean name="Logon" type="inmo.pagebeans.LogonBean"/>
+        <form-bean name="RegistrarCita" type="inmo.pagebeans.RegistrarCitaBean" />
+        <form-bean name="RegistrarCobroAlquiler" type="inmo.pagebeans.RegistrarCobroAlquilerBean" />
+        <form-bean name="RegistrarEgresos" type="inmo.pagebeans.RegistrarEgresoBean" />
+        <form-bean name="RegistrarEvento" type="inmo.pagebeans.RegistrarEventoBean" />
+        <form-bean name="RegistrarPersona" type="inmo.pagebeans.RegistrarPersonaBean" />
+        <form-bean name="RegistrarPropiedad" type="inmo.pagebeans.RegistrarPropiedadBean" />
+        <form-bean name="RegistrarQueja" type="inmo.pagebeans.RegistrarQuejaBean" />
+
+    </form-beans>
+
+    <global-exceptions></global-exceptions>
+    
+    <global-forwards>
+    	<forward name="logon" path="/action/Logon.do"></forward>
+    </global-forwards>
+    <action-mappings>
+        <action path="/Welcome" forward="/pages/logon.jsp" />
+        
+        <action path="/action/Logon"
+        	type="inmo.action.LogonAction"
+            scope="request"
+            name="Logon"
+            validate="false">
+            <forward name="logueado" path="/pages/principal.jsp"/>
+            <forward name="loguear" path="/pages/logon.jsp" />
+	    </action>
+	    <action path="/action/ValidateLogon"
+        	input="/pages/logon.jsp"
+        	type="inmo.action.ValidateLogonAction"
+            scope="request"
+            name="Logon">
+            <forward name="success" path="/pages/principal.jsp" />
+	    </action>
+	     <action path="/logoff"
+	        type="inmo.action.LogoffAction">
+	    </action>
+	    
+
+		<!-- Formularios -->
+
+		<!--#########################################-->
+		<!-- Actions 								 -->
+		<!--#########################################-->
+
+		<!--#########################################-->
+		<!-- Actions de carga de Paginas 			 -->
+		<!--#########################################-->
+
+        <action path="/action/CargaBusquedaClientes" 
+        	type="inmo.action.cargar.CargaBuscarClientesAction"
+			scope="request">
+            <forward name="busquedaCliente" path="/pages/busquedas/busquedaClientes.jsp" />
+        </action>
+        <action path="/action/CargaBusquedaBarrios" 
+        	type="inmo.action.cargar.CargaBuscarBarriosAction"
+			scope="request">
+            <forward name="busquedaBarrio" path="/pages/busquedas/busquedaBarrios.jsp" />
+        </action>
+        <action path="/action/cargaBusquedaContratos" forward="/pages/busquedas/busquedaContratos.jsp" />
+        <action path="/action/CargaBusquedaPersonas" 
+        	type="inmo.action.cargar.CargaBuscarPersonasAction"
+			scope="request" >
+            <forward name="busquedaPersona" path="/pages/busquedas/busquedaPersonas.jsp" />
+        </action>
+        <action path="/action/CargaBusquedaPropietarios" 
+        	type="inmo.action.cargar.CargaBuscarPropietariosAction"
+			scope="request">
+            <forward name="busquedaPropietario" path="/pages/busquedas/busquedaPropietarios.jsp" />
+        </action>
+        <action path="/action/CargaConsultarPropiedades"
+			type="inmo.action.cargar.CargaConsultarPropiedadesAction" 
+			scope="request"
+			name="ConsultarPropiedad">
+            <forward name="consultarPropiedad" path="/pages/consultas/consultarPropiedades.jsp" />
+        </action>
+        <action path="/action/CargaRegistrarCitas" forward="/pages/altas/registrarCitas.jsp" />
+        <action path="/action/CargaRegistrarCobroAlquiler"
+			type="inmo.action.cargar.CargaRegistrarCobroAlquilerAction" 
+			name="RegistrarCobroAlquiler"
+			scope="request" 
+			validate="false" >
+            <forward name="registrarCobroAlquiler" path="/pages/altas/registrarCobroAlquiler.jsp" />
+        </action>
+        <action path="/action/CargaRegistrarEgresos"
+			type="inmo.action.cargar.CargaRegistrarEgresosAction"
+			name="RegistrarEgreso" 
+			scope="request" 
+			validate="false" >
+            <forward name="registrarEgreso"
+			path="/pages/altas/registrarEgresos.jsp" />
+        </action>
+        <action path="/action/CargaRegistrarEventos"
+			type="inmo.action.cargar.CargaRegistrarEventosAction"
+			scope="request" 
+			validate="false" 
+			name="RegistrarEvento">
+            <forward name="registrarEvento" path="/pages/altas/registrarEventos.jsp" />
+        </action>
+        <action path="/action/CargaRegistrarPersonas" 
+        	type="inmo.action.cargar.CargaRegistrarPersonaAction"
+			validate="false" 
+			scope="request" 
+			name="RegistrarPersona">
+            <forward name="registrarPersona" path="/pages/altas/registrarPersona.jsp" />
+        </action>
+        <action path="/action/CargaRegistrarPropiedades"
+			type="inmo.action.cargar.CargaRegistrarPropiedadesAction" 
+			scope="request"
+			validate="false" 
+			name="RegistrarPropiedad">
+            <forward name="registrarPropiedad" path="/pages/altas/registrarPropiedad.jsp" />
+        </action>
+        <action path="/action/CargaRegistrarQuejas" 
+        	type="inmo.action.cargar.CargaRegistrarQuejaAction"
+			scope="request" 
+			name="RegistrarPropiedad"
+			validate="false" >
+            <forward name="registrarQueja" path="/pages/altas/registrarQueja.jsp" />
+        </action>
+
+
+		<!--#########################################-->
+		<!-- Actions de Procesamiento de las Paginas -->
+		<!--#########################################-->
+
+        <action path="/action/ConsultarPropiedad" type="inmo.action.ConsultarPropiedadAction"
+			name="ConsultarPropiedad" validate="true" scope="request">
+            <forward name="success"
+				path="/pages/consultas/resultados/mostrarPropiedades.jsp" />
+        </action>
+        <action path="/action/RegistrarCita" type="inmo.action.RegistrarCitaAction"
+			name="RegistrarCita" 
+			scope="request" 
+			input="/pages/altas/registrarCitas.jsp">
+            <forward name="success" path="/pages/ok.jsp" />
+        </action>
+        <action path="/action/RegistrarCobroAlquiler"
+			type="inmo.action.RegistrarCobroAlquilerAction"
+			name="RegistrarCobroAlquiler" 
+			scope="request"
+			input="/pages/altas/registrarCobroAlquiler.jsp">
+            <forward name="success" path="/pages/ok.jsp" />
+        </action>
+        <action path="/action/RegistrarEgreso"
+			type="inmo.action.RegistrarEgresoAction"
+			name="RegistrarEgresos" 
+			scope="request" 
+			input="/pages/altas/registrarEgresos.jsp">
+            <forward name="success" path="/pages/ok.jsp" />
+        </action>
+        <action path="/action/RegistrarEvento" 
+        	type="inmo.action.RegistrarEventoAction"
+			name="RegistrarEvento"  
+			scope="request"
+            input="/pages/altas/registrarEventos.jsp">
+            <forward name="success" path="/pages/ok.jsp" />
+        </action>
+        <action path="/action/RegistrarPersona" 
+        	type="inmo.action.RegistrarPersonaAction"
+			name="RegistrarPersona" 
+			scope="request" 
+			input="/pages/altas/registrarPersona.jsp">
+            <forward name="success" path="/pages/ok.jsp" />
+        </action>
+        <action path="/action/RegistrarPropiedad" 
+        	type="inmo.action.RegistrarPropiedadAction"
+			name="RegistrarPropiedad" 
+			scope="request" 
+			input="/pages/altas/registrarPropiedad.jsp">
+            <forward name="success" path="/pages/ok.jsp" />
+        </action>
+        <action path="/action/RegistrarQueja" 
+        	type="inmo.action.RegistrarQuejaAction"
+			name="RegistrarQueja" 
+			input="/pages/altas/registrarQueja.jsp" 
+			scope="request">
+            <forward name="success" path="/pages/ok.jsp" />
+        </action>
+
+		<!--#########################################-->
+		<!-- Actions de Ajax						 -->
+		<!--#########################################-->
+
+        <action path="/action/altaContacto" type="inmo.action.ajax.AltaContactosAction">
+        </action>
+        <action path="/action/altaBarrio" type="inmo.action.ajax.AltaBarrioAction">
+        </action>
+        <action path="/action/altaCliente" type="inmo.action.ajax.AltaClienteAction">
+        </action>
+        <action path="/action/altaClientePropietario" type="inmo.action.ajax.AltaClientePropietarioAction">
+        </action>
+        <action path="/action/altaCobroAlquileres" type="inmo.action.ajax.AltaCobroAlquileresAction">
+        </action>
+        <action path="/action/altaDireccion" type="inmo.action.ajax.AltaDireccionesAction">
+        </action>
+        <action path="/action/altaTitulo" type="inmo.action.ajax.AltaTitulosAction">
+        </action>
+        <action path="/action/altaTipoEmpleado" type="inmo.action.ajax.AltaTipoEmpleadoAction">
+        </action>
+        <action path="/action/altaTipoPersona" type="inmo.action.ajax.AltaTipoPersonaAction">
+        </action>
+        <action path="/action/devolverBarrios" type="inmo.action.ajax.DevolverBarriosAction">
+        </action>
+        <action path="/action/devolverClientes" type="inmo.action.ajax.DevolverClientesAction">
+        </action>
+        <action path="/action/devolverCobroAlquileres" type="inmo.action.ajax.DevolverCobroAlquileres">
+        </action>
+        <action path="/action/devolverLocalidades" type="inmo.action.ajax.DevolverLocalidadesAction">
+        </action>
+        <action path="/action/devolverProvincias" type="inmo.action.ajax.DevolverProvinciasAction">
+        </action>
+        <action path="/action/devolverPropietarios" type="inmo.action.ajax.DevolverPropietariosAction">
+        </action>
+        <action path="/action/devolverTipoEmpleados" type="inmo.action.ajax.DevolverTipoEmpleadosAction">
+        </action>
+        <action path="/action/devolverTipoContactos" type="inmo.action.ajax.DevolverTipoContactosAction">
+        </action>
+        <action path="/action/devolverTipoDomicilios" type="inmo.action.ajax.DevolverTipoDomiciliosAction">
+        </action>
+        <action path="/action/devolverTitulos" type="inmo.action.ajax.DevolverTitulosAction">
+        </action>
+
+    </action-mappings>
+
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+
+    <message-resources parameter="inmo/ApplicationResource"></message-resources>
+
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+	<!--
+		<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+		value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+		</plug-in>
+	-->
+</struts-config>

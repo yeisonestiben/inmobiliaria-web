@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="inmo.db.Direccion" table="direccion" catalog="inmobiliaria">
+        <id name="idDireccion" type="java.lang.Integer">
+            <column name="idDireccion" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="tipoUbicacion" class="inmo.db.TipoUbicacion" fetch="select">
+            <column name="Tipo_Ubicacion" />
+        </many-to-one>
+        <many-to-one name="barrios" class="inmo.db.Barrios" fetch="select">
+            <column name="Barrios" />
+        </many-to-one>
+        <property name="calle" type="java.lang.String">
+            <column name="calle" length="45" />
+        </property>
+        <property name="nro" type="java.lang.Integer">
+            <column name="nro" />
+        </property>
+        <property name="piso" type="java.lang.Integer">
+            <column name="piso" />
+        </property>
+        <property name="departamento" type="java.lang.String">
+            <column name="departamento" length="3" />
+        </property>
+        <property name="cpp" type="java.lang.String">
+            <column name="cpp" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>
