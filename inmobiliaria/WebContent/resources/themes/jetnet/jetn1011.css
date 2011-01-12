@@ -1,0 +1,404 @@
+ul           {  }
+ul ul        {  }
+ul ul ul     {  }
+a:link       {  }
+a:active     {  }
+a:visited    {  }
+body         { background-color: rgb(255, 255, 255);}
+table        { font-family: Arial; font-size: 13px; border-collapse: collapse;}
+th           {  }
+td
+  {
+      font-size: 11px;
+  }
+td input
+  {
+      font-size: 11 px;
+  }
+td select
+  {
+      font-size: 11 px;
+  }
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+hr           {  }
+button       {  }
+label        {  }
+.mstheme-text {  }
+textarea     {  }
+fieldset     {  }
+legend       {  }
+select       {  }
+caption      {  }
+
+.historyreport
+{
+	font-size: 14px;
+}
+
+.inmo-apptitle
+{	font-size:16px;
+	font-weight:bolder;
+}
+
+.inmo-loginframe 
+{ 
+    BORDER-RIGHT: #000066 1px solid; 
+    MARGIN-BOTTOM: 10px; 
+    BORDER-LEFT: #000066 1px solid; 
+    WIDTH: 315px; 
+    BORDER-BOTTOM: #000066 1px solid;
+    BORDER-TOP: #000066 1px solid;
+}
+.inmo-tableframe
+{
+	BORDER-TOP: #000066 1px solid;
+	BORDER-BOTTOM: #000066 1px solid;
+	BORDER-LEFT: #000066 1px solid;
+	BORDER-RIGHT: #000066 1px solid;
+}
+.inmo-headerframe
+{
+	BORDER-TOP: #8383B3 1px solid;
+	BORDER-BOTTOM: #8383B3 1px solid;
+	BORDER-LEFT: #8383B3 1px solid;
+	BORDER-RIGHT: #8383B3 1px solid;
+}
+.inmo-footerframe
+{
+    BORDER-TOP: #8383B3 2px solid;
+}
+.inmo-divider
+{
+	background-color: #8383B3;
+	color: #FFFFFF;
+}
+.inmo-divider td
+{
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.inmo-logintitle  
+{ 
+    color: #FFFFFF; 
+    background-color: #00007C; 
+    white-space: nowrap;
+    font-weight: bold;
+}
+               
+.inmo-loginbody
+{	
+	BACKGROUND-IMAGE: url("../../images/login_background.gif"); 
+	BACKGROUND-REPEAT: repeat-x 
+}               
+
+.inmo-messageframe 
+{
+	border-right: thin solid;
+	border-top: thin solid;
+	border-left: thin solid;
+	border-bottom: thin solid;
+	background-color: #E1E1E1;
+	border-color:#8383B3;
+	color:#8383B3;
+	width:800px;
+}
+               
+.inmo-bannerframe { background-color: #00007C; background-repeat: no-repeat; height: 30; 
+               background-image: 
+               url('clouds-banner.gif') }
+.inmo-engineframe { background-color: #00007C; background-repeat: no-repeat; height: 30; 
+               background-image: 
+               url('../../images/engines.jpg') }
+.inmo-bannertab { background-color: #00007C }
+
+.inmo-navmenu 
+{ 
+    color: #FFFFFF; 
+    background-color: #00007C; 
+    white-space: nowrap;
+}
+.inmo-navmenu a { color: #FFFFFF; font-weight: bold; font-family: Arial; text-decoration: none; 
+               font-size: 11px; white-space: nowrap}
+.inmo-navmenu a:hover { text-decoration: underline; color: #FFD700 }
+
+.inmo-selectedmenuitem a {color: FFD700; font-weight: bold; font-family: Arial; text-decoration: none; 
+               font-size: 11px; white-space: nowrap}
+.inmo-selectedmenuitem a:hover { text-decoration: underline; color: #FFD700 }   
+            
+.inmo-nav     { background-color: #00007C; border-left-width: 1px; border-right-width: 1px; 
+               border-top-width: 1px; border-bottom-style: solid; 
+               border-bottom-width: 1px }
+.inmo-navheader a { text-decoration: none; font-size: 11px; font-family: Arial; color: #FFD700 }
+.inmo-navheader a:hover { text-decoration: underline; color: #FFFFFF }
+.inmo-portalmenu { font-size: 11px; color: #FFFFFF }
+.inmo-portalmenu a { text-decoration: none; color: #FFFFFF }
+.inmo-portalmenu a:hover { text-decoration: underline; color: #FFFFFF }
+.inmo-Searchform input { font-size: 11px }
+.inmo-Searchformarea { background-color: #00007C }
+.inmo-Searchframe { background-image: 
+               url('banner-right-corner.gif'); 
+               background-repeat: no-repeat; background-position: left top }
+.inmo-tab     { background-color: #8383B3 }
+.inmo-tabfooter { background-color: #8383B3 }
+.inmo-tabheader { background-color: #8383B3 }
+.inmo-tabtitle 
+ { 
+     font-size: 12px; 
+     font-weight: bold; 
+     color: #FFFFFF; 
+     font-family: Arial;
+ }
+.inmo-tabtopleftcorner { width: 7; height: 8; background-image: 
+               url('tab-top-left-corner.gif'); 
+               background-repeat: no-repeat }
+.inmo-tabtoprightcorner { background-image: 
+               url('tab-top-right-corner.gif'); 
+               width: 7; background-repeat: no-repeat; background-color: 
+               #8383B3; height: 8; background-position: right top }
+.inmo-titleareaframe { background-repeat: no-repeat; background-position: right top }
+.inmo-titlearealine { color: #FFFFFF; background-color: #00007C }
+.inmo-titlearealine a { color: #FFFFFF; font-weight: bold; font-family: Arial; text-decoration: none; 
+               font-size: 12px }
+.inmo-titlearealine a:hover { text-decoration: underline }
+
+.inmo-tablink { color: #FFFFFF; }
+.inmo-tablink a { color: #FFFFFF; font-weight: bold; font-family: Arial; text-decoration: none; 
+               font-size: 12px }
+.inmo-tablink a:hover { text-decoration: underline }
+
+
+.inmo-tablestyle {background-color: #E1E1E1; border-width:thin; color:black;white-space:nowrap;}
+.inmo-tablestyle a:hover {color: blue}
+.inmo-tablestyle a:link {color: blue}
+.inmo-tablestyle a:visited {color: blue}
+TH.inmo-tablestyle 
+{
+    background-color: #8383B3; 
+    border-width:thin; 
+    color:white;
+    font-weight: bold;
+    vertical-align: middle  
+}
+TH.inmo-tablestyle TR TD {background-color: #8383B3; border-width:thin; color:white;  font-weight: bold;vertical-align: middle }
+.inmo-tablestyle-alt {background-color: #EEEEEE; border-width:thin; color:black;white-space:nowrap;}
+.inmo-tablestyle-alt a:hover {color: blue}
+
+
+/* For Issue Return */
+TH.inmo-pagerstyle-ir
+{
+    background-color: #8383B3; 
+    color:white;
+    font-weight: bold;
+    vertical-align: middle; 
+    font-size: 11 px;
+}
+
+TH.inmo-pagerstyle-ir TR TD 
+{    
+    background-color: #8383B3; 
+    color:white;  
+    font-weight: bold;
+    vertical-align: middle;
+    width: 800px;
+}
+.inmo-pagerstyle-ir
+{
+    background-color: #E1E1E1; 
+    border-width:thin; 
+    color:black;
+    white-space:nowrap;
+    BORDER: darkgray 1px solid;
+}
+.inmo-pagerstyle-alt-ir
+{
+    background-color: #EEEEEE; 
+    border-width:thin; 
+    color:black;
+    white-space:nowrap;
+    BORDER: darkgray 1px solid;
+    width: 800px;
+}
+.inmo-pagerstyle-ir a:hover {color: blue;  border:none}
+.inmo-pagerstyle-ir a:link {color: blue;  border:none}
+.inmo-pagerstyle-ir a:visited {color: blue;  border:none}
+.inmo-pagerstyle-alt-ir a:hover {color: blue;  border:none}
+
+
+
+/* For Issue Return */
+
+TH.inmo-pagerstyle 
+{
+    background-color: #8383B3; 
+    color:white;
+    font-weight: bold;
+    vertical-align: middle; 
+    font-size: 11 px;
+}
+TH.inmo-pagerstyle TR TD 
+{    
+    background-color: #8383B3; 
+    color:white;  
+    font-weight: bold;
+    vertical-align: middle;
+}
+.inmo-pagerstyle 
+{
+    background-color: #E1E1E1; 
+    border-width:thin; 
+    color:black;
+    white-space:nowrap;
+    BORDER: darkgray 1px solid;
+}
+.inmo-pagerstyle-alt 
+{
+    background-color: #EEEEEE; 
+    border-width:thin; 
+    color:black;
+    white-space:nowrap;
+    BORDER: darkgray 1px solid;
+}
+
+TH.inmo-pagerstyle-100
+{
+    background-color: #8383B3; 
+    color:white;
+    font-weight: bold;
+    vertical-align: middle; 
+    font-size: 11 px;    
+}
+TH.inmo-pagerstyle-100 TR TD 
+{    
+    background-color: #8383B3; 
+    color:white;  
+    font-weight: bold;
+    vertical-align: middle;
+}
+.inmo-pagerstyle-100
+{
+    background-color: #E1E1E1; 
+    border-width:thin; 
+    color:black;
+    white-space:nowrap;
+    BORDER: darkgray 1px solid;
+    width:100%
+}
+.inmo-pagerstyle-alt-100
+{
+    background-color: #EEEEEE; 
+    border-width:thin; 
+    color:black;
+    white-space:nowrap;
+    BORDER: darkgray 1px solid;
+    width:100%
+}
+
+.inmo-tablestyle TD 
+{
+    border-collapse: collapse;
+}
+.inmo-tablestyle-alt TD 
+{
+    border-collapse: collapse;
+}
+
+.inmo-pagerstyle a:hover {color: blue;  border:none}
+.inmo-pagerstyle a:link {color: blue;  border:none}
+.inmo-pagerstyle a:visited {color: blue;  border:none}
+.inmo-pagerstyle-alt a:hover {color: blue;  border:none}
+
+.inmo-pagerstyle-100 a:hover {color: blue;  border:none}
+.inmo-pagerstyle-100 a:link {color: blue;  border:none}
+.inmo-pagerstyle-100 a:visited {color: blue;  border:none}
+
+.inmo-pagerstyle-alt-100 a:hover {color: blue;  border:none}
+.inmo-pagerstyle-alt-100 a:link {color: blue;  border:none}
+.inmo-pagerstyle-alt-100 a:visited {color: blue;  border:none}
+
+.inmo-linkstyle a:hover {color: blue}
+.inmo-linkstyle a:link {color: blue}
+.inmo-linkstyle a:visited {color: blue}
+
+body         { font-weight: normal; font-style: normal; font-family: Arial; text-align: none; 
+               vertical-align: none }
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+hr           {  }
+img.ms-button { cursor: hand }
+img.thumbnail { border: 3px solid #9bf }
+span.thumbnail { width: 5px; position: relative; padding-left: 10; padding-right: 10; 
+               padding-top: 16; padding-bottom: 16 }
+span.userdata { display: none }
+table.ms-form td { width: 100%; vertical-align: top }
+table.ms-form th { vertical-align: top; font-weight: normal; color: #003399 }
+table.ms-imglibpreviewtable { display: none }
+table.ms-toolbar { background-color: #9ebff6; border: 1px solid #95b7f3 }
+td           {  }
+td.ms-titleareaframe { color: black }
+th           {  }
+tr           {  }
+tr.ms-imglibselectedrow, tr.ms-highlight { background-color: #f1f1f1 }
+
+
+.inmo-tabcontent td
+{
+	color:#000000;
+}
+
+.inmo-tabcontent a
+{
+	color:#00007C;
+}
+
+.inmo-tabcontent a:hover
+{
+	color:#8383B3;
+}
+
+.ms-itemheader
+{
+	text-decoration: underline;
+	font-weight: bold;
+	color: #00007C;
+}
+
+.inmo-calendar-image { width: 16; height: 15; }
+.inmo-message-failure
+{
+    color:red;
+}
+
+.inmo-message-failure a:hover {color: red}
+.inmo-message-failure a:link {color: red}
+.inmo-message-failure a:visited {color: red}
+
+.inmo-message-warning
+{
+    color:#3632FF;
+}
+
+.inmo-message-warning a:hover {color: #3632FF}
+.inmo-message-warning a:link {color: #3632FF}
+.inmo-message-warning a:visited {color: #3632FF}
+
+.inmo-message-informational
+{
+    color:green;
+}
+
+.inmo-message-informational a:hover {color: green}
+.inmo-message-informational a:link {color: green}
+.inmo-message-informational a:visited {color: green}               
+               

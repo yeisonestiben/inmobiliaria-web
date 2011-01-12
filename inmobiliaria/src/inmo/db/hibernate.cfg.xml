@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/inmobiliaria
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property  name="cache.provider_class">
+			org.hibernate.cache.NoCacheProvider
+		</property>
+		<mapping resource="inmo/db/TipoInforme.hbm.xml" />
+		<mapping resource="inmo/db/Clausulas.hbm.xml" />
+		<mapping resource="inmo/db/Informes.hbm.xml" />
+		<mapping resource="inmo/db/TipoEgreso.hbm.xml" />
+		<mapping resource="inmo/db/Quejas.hbm.xml" />
+		<mapping resource="inmo/db/TipoContrato.hbm.xml" />
+		<mapping resource="inmo/db/TipoComprobante.hbm.xml" />
+		<mapping resource="inmo/db/Propietario.hbm.xml" />
+		<mapping resource="inmo/db/Moneda.hbm.xml" />
+		<mapping resource="inmo/db/Eventos.hbm.xml" />
+		<mapping resource="inmo/db/TipoEmpleado.hbm.xml" />
+		<mapping resource="inmo/db/Contacto.hbm.xml" />
+		<mapping resource="inmo/db/MotivoCita.hbm.xml" />
+		<mapping resource="inmo/db/Persona.hbm.xml" />
+		<mapping resource="inmo/db/EstadoPropiedad.hbm.xml" />
+		<mapping resource="inmo/db/TipoIngreso.hbm.xml" />
+		<mapping resource="inmo/db/TipoDisponibilidad.hbm.xml" />
+		<mapping resource="inmo/db/Cliente.hbm.xml" />
+		<mapping resource="inmo/db/Provincias.hbm.xml" />
+		<mapping resource="inmo/db/Egreso.hbm.xml" />
+		<mapping resource="inmo/db/TipoDocumento.hbm.xml" />
+		<mapping resource="inmo/db/TipoUbicacion.hbm.xml" />
+		<mapping resource="inmo/db/Barrios.hbm.xml" />
+		<mapping resource="inmo/db/Propiedades.hbm.xml" />
+		<mapping resource="inmo/db/Disponibilidad.hbm.xml" />
+		<mapping resource="inmo/db/DireccionXPersona.hbm.xml" />
+		<mapping resource="inmo/db/Liquidaciones.hbm.xml" />
+		<mapping resource="inmo/db/Citas.hbm.xml" />
+		<mapping resource="inmo/db/TipoEvento.hbm.xml" />
+		<mapping resource="inmo/db/Direccion.hbm.xml" />
+		<mapping resource="inmo/db/TipoPropiedad.hbm.xml" />
+		<mapping resource="inmo/db/Empleado.hbm.xml" />
+		<mapping resource="inmo/db/Paises.hbm.xml" />
+		<mapping resource="inmo/db/CobroAlquileres.hbm.xml" />
+		<mapping resource="inmo/db/Motivo.hbm.xml" />
+		<mapping resource="inmo/db/TituloXEmpleado.hbm.xml" />
+		<mapping resource="inmo/db/Ingreso.hbm.xml" />
+		<mapping resource="inmo/db/TipoContacto.hbm.xml" />
+		<mapping resource="inmo/db/Contratos.hbm.xml" />
+		<mapping resource="inmo/db/Localidades.hbm.xml" />
+		<mapping resource="inmo/db/Titulo.hbm.xml" />
+		<mapping resource="inmo/db/EstadoCobro.hbm.xml" />
+		<mapping resource="inmo/db/PropiedadesXPropietario.hbm.xml" />
+		<mapping resource="inmo/db/ClausulasXContrato.hbm.xml" />
+		<mapping resource="inmo/db/Organizacion.hbm.xml" />
+
+	</session-factory>
+
+</hibernate-configuration>

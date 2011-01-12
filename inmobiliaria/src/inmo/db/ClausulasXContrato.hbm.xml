@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="inmo.db.ClausulasXContrato" table="clausulas_x_contrato" catalog="inmobiliaria">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="contratos" class="inmo.db.Contratos" fetch="select">
+            <column name="id_contrato" />
+        </many-to-one>
+        <many-to-one name="clausulas" class="inmo.db.Clausulas" fetch="select">
+            <column name="id_clausula" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

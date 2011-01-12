@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="inmo.db.TipoDocumento" table="tipo_documento" catalog="inmobiliaria">
+        <id name="idTipoDocumento" type="java.lang.Integer">
+            <column name="idTipoDocumento" />
+            <generator class="increment" />
+        </id>
+        <property name="tipo" type="java.lang.String">
+            <column name="tipo" length="45" />
+        </property>
+        <property name="descripcion" type="java.lang.String">
+            <column name="descripcion" length="45" />
+        </property>
+        <set name="personas" inverse="true">
+            <key>
+                <column name="Tipo_Documento" />
+            </key>
+            <one-to-many class="inmo.db.Persona" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="inmo.db.Clausulas" table="clausulas" catalog="inmobiliaria">
+        <id name="idClausulas" type="java.lang.Integer">
+            <column name="idClausulas" />
+            <generator class="increment" />
+        </id>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="descripcion" type="java.lang.String">
+            <column name="descripcion" />
+        </property>
+        <property name="numero" type="java.lang.Integer">
+            <column name="numero" />
+        </property>
+        <set name="clausulasXContratos" inverse="true">
+            <key>
+                <column name="id_clausula" />
+            </key>
+            <one-to-many class="inmo.db.ClausulasXContrato" />
+        </set>
+    </class>
+</hibernate-mapping>

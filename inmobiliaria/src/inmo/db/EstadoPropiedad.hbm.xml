@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="inmo.db.EstadoPropiedad" table="estado_propiedad" catalog="inmobiliaria">
+        <id name="idEstadoPropiedad" type="java.lang.Integer">
+            <column name="idEstado_Propiedad" />
+            <generator class="increment" />
+        </id>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="descipcion" type="java.lang.String">
+            <column name="descipcion" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

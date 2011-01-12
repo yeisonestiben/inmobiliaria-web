@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="inmo.db.Contacto" table="contacto" catalog="inmobiliaria">
+        <id name="idContacto" type="java.lang.Integer">
+            <column name="idContacto" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="tipoContacto" class="inmo.db.TipoContacto" fetch="select">
+            <column name="Tipo_Contacto" />
+        </many-to-one>
+        <many-to-one name="persona" class="inmo.db.Persona" fetch="select">
+            <column name="Persona" />
+        </many-to-one>
+        <many-to-one name="organizacion" class="inmo.db.Organizacion" fetch="select">
+            <column name="organizacion" />
+        </many-to-one>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

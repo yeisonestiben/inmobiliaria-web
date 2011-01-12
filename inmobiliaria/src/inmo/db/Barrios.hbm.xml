@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="inmo.db.Barrios" table="barrios" catalog="inmobiliaria">
+        <id name="idBarrios" type="java.lang.Integer">
+            <column name="idBarrios" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="localidades" class="inmo.db.Localidades" fetch="select">
+            <column name="Localidades_idLocalidades" />
+        </many-to-one>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

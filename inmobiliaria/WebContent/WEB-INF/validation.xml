@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+	<formset>
+		
+		<form name="RegistrarPersona">
+			<field property="nombres" depends="required">
+				<arg key="inputForm.nombres" />
+			</field>
+			<field property="apellido" depends="required">
+				<arg key="inputForm.apellido" />
+			</field>
+			<field property="numeroDocumento" depends="required,integer">
+				<arg key="inputForm.numeroDocumento" />
+			</field>
+		</form>
+
+		<form name="ConsultarPropiedad">
+			<field property="montoDesde" depends="float">
+				<arg key="inputForm.montoDesde" />
+			</field>
+			<field property="montoHasta" depends="float">
+				<arg key="inputForm.montoHasta" />
+			</field>
+			<field property="antiguedad" depends="integer">
+				<arg key="inputForm.antiguedad" />
+			</field>
+			<field property="parcela" depends="integer">
+				<arg key="inputForm.parcela" />
+			</field>
+			<field property="patio" depends="integer">
+				<arg key="inputForm.patio" />
+			</field>
+			<field property="cubierto" depends="integer">
+				<arg key="inputForm.cubierto" />
+			</field>
+		</form>
+		<form name="RegistrarCobroAlquiler">
+			<field property="numeroCliente" depends="required">
+				<arg key="inputForm.cliente" />
+			</field>
+		</form>
+	</formset>
+
+</form-validation>
