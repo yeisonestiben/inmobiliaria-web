@@ -12,8 +12,6 @@ import inmo.ajax.gwt.client.db.PropietarioBean;
 import java.util.Date;
 import java.util.List;
 
-import com.google.gwt.user.client.Window;
-
 public class ConstantesContrato
 {
 	public static final String _01_INMUEBLE = "INMUEBLE QUE SE ALQUILA:"; 
@@ -199,16 +197,13 @@ public class ConstantesContrato
 				"respectivas lámparas y demás efectos, se encuentran en buen " +
 				"estado y funcionamiento.- LA LOCATARIA se compromete a la " +
 				"vez ");
-		Window.alert("Entra6");
 		if (!permitirModificaciones)
 		{
-			Window.alert("Entra7");
 			clausula.append(" a no introducir modificaciones de ninguna " +
 					"naturaleza en lo locado, sin el previo consentimiento " +
 					"escrito de LA LOCADORA, quedando las que fueran por " +
 					"ella autorizadas, en beneficio  de la propiedad;");
 		}
-		Window.alert("Entra8");
 		clausula.append("a tomar a su cargo todos los gastos de reparaciones" +
 				" y mantenimiento que fueran necesarios, lo que aquí se pacta" +
 				" demandaré, así como al pago de los objetos que se" +
@@ -226,7 +221,6 @@ public class ConstantesContrato
 				" efectos de su inspección, y comunicarle por escrito y de" +
 				" inmediato cualquier situación que pudiere causar un" +
 				" deterioro o afectar la seguridad del mismo.-");
-		Window.alert("Entra9");
 		return clausula.toString();
 	}
 	
@@ -611,7 +605,6 @@ public class ConstantesContrato
 	public static String getGarantes(List<GarantiaBean> garantes)
 	{
 		StringBuilder clausula = new StringBuilder();
-		
 		clausula.append("Se constituyen en garantes fiadores, llanos y " +
 				"principales pagadores, en forma solidaria y mancomunada, " +
 				"de todos los efectos y obligaciones del presente contrato, " +
@@ -649,7 +642,6 @@ public class ConstantesContrato
 					garantia.getGarante().getTipoDocumento().getTipo() +
 					" N° " + garantia.getGarante().getNumeroDocumento() + 
 			", con domicilio en ");
-
 			DireccionBean direccion = null;
 			for (DireccionBean dir : garantia.getGarante().getDirecciones())
 			{
@@ -663,7 +655,6 @@ public class ConstantesContrato
 			{
 				direccion = garantia.getGarante().getDirecciones()[0];
 			}
-
 			clausula.append(direccion.getCalle() + " N° " +
 					direccion.getNumero() + " B° " +
 					direccion.getBarrios().getNombre() + 
@@ -671,24 +662,9 @@ public class ConstantesContrato
 					direccion.getBarrios().getNombreLocalidad() + 
 					", Provincia de " +
 					direccion.getBarrios().getNombreProvincia());
-			
 			if (garantia.getTipoGarantia() == TipoGarantia.SUELDO)
 			{
 				clausula.append(", quien presenta Recibo de haberes de ");
-				clausula.append(garantia.getOrganizacion().getNombre());
-				clausula.append(" sito en ");
-				clausula.append(
-						garantia.getOrganizacion().getDireccion().getCalle() +
-						" N° " + 
-						garantia.getOrganizacion().getDireccion().getNumero() + 
-						" B° " +
-						garantia.getOrganizacion().getDireccion().getBarrios().
-						getNombre() + " de la ciudad de " +
-						garantia.getOrganizacion().getDireccion().getBarrios().
-						getNombreLocalidad() + 
-						", Provincia de " +
-						garantia.getOrganizacion().getDireccion().getBarrios().
-						getNombreProvincia());
 				clausula.append(garantia.getDescripcionGarantia());	
 			} 
 			else {
@@ -718,7 +694,6 @@ public class ConstantesContrato
 		clausula.append(".\nLa LOCADORA podrá dirigir su acción en caso de " +
 				"incumplimiento o diferendo contra cualquiera de los " +
 				"firmantes de este contrato de locación.-");
-		
 		return clausula.toString();
 	}
 	

@@ -14,5 +14,4 @@ extends BuscarOrganizacionService, BuscarInmuebleService
 	void getMonedas(AsyncCallback<MonedaBean[]> callback);
 
 	void sendContrato(String html, AsyncCallback<Bool> callback);
-
 }

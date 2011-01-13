@@ -4,7 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @SuppressWarnings("rawtypes")
-public class Organizacion implements java.io.Serializable, Comparable<Organizacion>
+public class Organizacion implements java.io.Serializable, 
+Comparable<Organizacion>
 {
 	private static final long serialVersionUID = 1L;
 	private Integer idOrganizacion;

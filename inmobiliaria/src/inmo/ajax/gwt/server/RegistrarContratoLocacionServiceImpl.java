@@ -16,6 +16,7 @@ import inmo.ajax.gwt.server.gestores.GestorBarrio;
 import inmo.ajax.gwt.server.gestores.GestorCliente;
 import inmo.ajax.gwt.server.gestores.GestorLocalidad;
 import inmo.ajax.gwt.server.gestores.GestorMonedas;
+import inmo.ajax.gwt.server.gestores.GestorOrganizacion;
 import inmo.ajax.gwt.server.gestores.GestorPersona;
 import inmo.ajax.gwt.server.gestores.GestorPropiedad;
 import inmo.ajax.gwt.server.gestores.GestorPropietario;
@@ -45,7 +46,8 @@ implements RegistrarContratoLocacionService
 	{
 		if (tipoPersona == TipoPersona.TODOS)
 		{
-			return new GestorPersona().getPagedPersonas(loadConfig, apellido, nombre);
+			return new GestorPersona().getPagedPersonas(loadConfig, apellido, 
+					nombre);
 		}
 		else if (tipoPersona == TipoPersona.PROPIETARIO)
 		{
@@ -141,5 +143,19 @@ implements RegistrarContratoLocacionService
 		session.setAttribute("contratoLocacion", html);
 		lreturn.setValue(true);
 		return lreturn;
+	}
+
+	public PagingLoadResult<BaseTreeModel> getPagedOrganizaciones(
+			PagingLoadConfig loadConfig)
+	{
+		PagingLoadResult<BaseTreeModel> result = 
+			new GestorOrganizacion().getPagedPersonas(loadConfig, "");
+		return result;
+	}
+
+	public PagingLoadResult<BaseTreeModel> getPagedOrganizaciones(
+			PagingLoadConfig loadConfig, String nombre)
+	{
+		return new GestorOrganizacion().getPagedPersonas(loadConfig, nombre);
 	}
 }

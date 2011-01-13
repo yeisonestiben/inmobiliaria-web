@@ -25,13 +25,21 @@ public interface RegistrarContratoLocacionService extends RemoteService
 			loadConfig, TipoPersona tipoPersona);
 	
 	PagingLoadResult<BaseTreeModel> getPagedPersonas(PagingLoadConfig 
-			loadConfig, String apellido, String nombre, TipoPersona tipoPersona);
+			loadConfig, String apellido, String nombre, 
+			TipoPersona tipoPersona);
 
+	PagingLoadResult<BaseTreeModel> getPagedOrganizaciones(PagingLoadConfig 
+			loadConfig);
+	
+	PagingLoadResult<BaseTreeModel> getPagedOrganizaciones(PagingLoadConfig 
+	loadConfig, String nombre); 
+	
 	MonedaBean[] getMonedas();
 	
 	BarrioBean[] getBarrios();
 
-	BarrioBean[] getBarrios(String idLocalidad, String idProvincia, String inicial);
+	BarrioBean[] getBarrios(String idLocalidad, String idProvincia, 
+			String inicial);
 
 	LocalidadBean[] getLocalidades();
 
@@ -39,15 +47,17 @@ public interface RegistrarContratoLocacionService extends RemoteService
 
 	ProvinciaBean[] getProvincias();
 
-	PagingLoadResult<BaseTreeModel> getPagedBarrios(PagingLoadConfig loadConfig);
+	PagingLoadResult<BaseTreeModel> getPagedBarrios(PagingLoadConfig 
+			loadConfig);
 
-	PagingLoadResult<BaseTreeModel> getPagedBarrios(PagingLoadConfig loadConfig, String idLocalidad, 
-			String idProvincia, String inicial);
+	PagingLoadResult<BaseTreeModel> getPagedBarrios(PagingLoadConfig loadConfig, 
+			String idLocalidad, String idProvincia, String inicial);
 	
 	PropietarioBean getPropietario (String idPropietario);
 	
-	PagingLoadResult<BaseTreeModel> getPagedInmuebles(PagingLoadConfig loadConfig, String idPropietario,
-			String idBarrio, String calle, String numero, String idTipoPropiedad, 
+	PagingLoadResult<BaseTreeModel> getPagedInmuebles(PagingLoadConfig 
+			loadConfig, String idPropietario, String idBarrio, String calle, 
+			String numero, String idTipoPropiedad, 
 			TipoDisponibilidadBean tipoDisponibilidad);
 	
 	TipoPropiedadBean[] getTipoPropiedades(); 
