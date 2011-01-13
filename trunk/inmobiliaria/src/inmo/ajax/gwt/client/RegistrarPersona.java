@@ -727,8 +727,6 @@ public class RegistrarPersona extends Registro implements EntryPoint
 		}		
 	}
 	
-	
-	
 	private void agregarContacto()
 	{
 		final String idTipoContacto = listaTipoContactos.getValue(listaTipoContactos.getSelectedIndex()).trim();

@@ -10,7 +10,6 @@ import inmo.ajax.gwt.client.db.GarantiaBean;
 import inmo.ajax.gwt.client.db.MonedaBean;
 import inmo.ajax.gwt.client.db.PropietarioBean;
 import inmo.ajax.gwt.client.db.TipoDisponibilidadBean;
-import inmo.ajax.gwt.client.db.container.OrganizacionContainer;
 import inmo.ajax.gwt.client.db.container.PersonaContainer;
 import inmo.ajax.gwt.client.db.container.PropiedadContainer;
 import inmo.ajax.gwt.client.utils.Bool;
@@ -204,6 +203,9 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 	private BuscarInmueble buscarGarantiaInmueble1;
 	private BuscarInmueble buscarGarantiaInmueble2;
 	private BuscarInmueble buscarGarantiaInmueble3;
+	private BuscarOrganizacion buscarOrganizacion1;
+	private BuscarOrganizacion buscarOrganizacion2;
+	private BuscarOrganizacion buscarOrganizacion3;
 	private Button botonBuscarGarante1;
 	private Button botonBuscarGarante2;
 	private Button botonBuscarGarante3;
@@ -231,9 +233,9 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 	private HTML separador1;
 	private HTML separador2;
 	private HTML separador3;
-	private OrganizacionContainer organizacionContainer1;
-	private OrganizacionContainer organizacionContainer2;
-	private OrganizacionContainer organizacionContainer3;
+	private Hidden hiddenDireccionOrganizacion1;
+	private Hidden hiddenDireccionOrganizacion2;
+	private Hidden hiddenDireccionOrganizacion3;
 
 	public void onModuleLoad()
 	{
@@ -279,7 +281,7 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 		buscarLocadorPersona = new BuscarPersona(TipoPersona.PROPIETARIO, 
 				hiddenLocador, contenedorLocador, txtLocador, service);
 		buscarLocadorOrganizacion = new BuscarOrganizacion(hiddenLocador, 
-				txtLocador, new OrganizacionContainer(), service);
+				txtLocador, new Hidden(), service);
 		radioLacadorPersona = new RadioButton("locador", "Persona");
 		radioLacadorOrganizacion = new RadioButton("locador", "Organización");
 		radioLacadorPersona.setValue(true);
@@ -337,7 +339,7 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 		buscarLocatarioPersona = new BuscarPersona(TipoPersona.CLIENTE, 
 				hiddenLocatario, contenedorLocatario, txtLocatario, service);
 		buscarLocatarioOrganizacion = new BuscarOrganizacion(hiddenLocatario, 
-				txtLocatario, new OrganizacionContainer(), service);
+				txtLocatario, new Hidden(), service);
 		radioLocatarioPersona = new RadioButton("locatario", "Persona");
 		radioLocatarioOrganizacion = 
 			new RadioButton("locatario", "Organización");
@@ -559,10 +561,14 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 	}
 
 	private void completarPanelGarantes()
-	{
+	{		
 		panelGarantes = new VerticalPanel();
 		
 		listCantidadGarantes = new ListBox();
+		
+		hiddenDireccionOrganizacion1 = new Hidden();
+		hiddenDireccionOrganizacion2 = new Hidden();
+		hiddenDireccionOrganizacion3 = new Hidden();
 		
 		panelEmpleo1 = new VerticalPanel();
 		panelEmpleo2 = new VerticalPanel();
@@ -648,6 +654,13 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 				new Hidden(), containerGarante2, txtGarante2, service);
 		buscarGarantePropierario3 = new BuscarPersona(TipoPersona.PROPIETARIO, 
 				new Hidden(), containerGarante3, txtGarante3, service);
+		
+		buscarOrganizacion1 = new BuscarOrganizacion(new Hidden(), 
+				txtOrganizacion1, hiddenDireccionOrganizacion1, service);
+		buscarOrganizacion2 = new BuscarOrganizacion(new Hidden(), 
+				txtOrganizacion2, hiddenDireccionOrganizacion2, service);
+		buscarOrganizacion3 = new BuscarOrganizacion(new Hidden(), 
+				txtOrganizacion3, hiddenDireccionOrganizacion3, service);
 		
 		botonBuscarGarante1 = new Button("Buscar");
 		botonBuscarGarante2 = new Button("Buscar");
@@ -961,6 +974,33 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 			}
 		});
 		
+		botonBuscarOrganizacion1.addClickHandler(new ClickHandler()
+		{
+			
+			public void onClick(ClickEvent arg0)
+			{
+				buscarOrganizacion1.showDialog();
+			}
+		});
+		
+		botonBuscarOrganizacion2.addClickHandler(new ClickHandler()
+		{
+			
+			public void onClick(ClickEvent arg0)
+			{
+				buscarOrganizacion2.showDialog();
+			}
+		});
+		
+		botonBuscarOrganizacion3.addClickHandler(new ClickHandler()
+		{
+			
+			public void onClick(ClickEvent arg0)
+			{
+				buscarOrganizacion3.showDialog();
+			}
+		});
+		
 		radioGarantia1Propiedad.addValueChangeHandler(new 
 				ValueChangeHandler<Boolean>()
 		{
@@ -1112,18 +1152,13 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 				String html = "entra";
 				Window.alert(html);
 				List<GarantiaBean> garantes = getGarantes();
-				Window.alert("llega 2");
 				if (garantes != null)
 				{
-					Window.alert("llega 3");
 					html = ConstantesContrato.getGarantes(garantes);
-					Window.alert("llega 4");
 				}
 				else
 				{
-					Window.alert("llega 5");
 					html = "llega vacio!!!";
-					Window.alert("llega 6");
 				}
 				Window.alert(html);
 				AsyncCallback<Bool> callback = new AsyncCallback<Bool>()
@@ -1406,7 +1441,7 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 				else
 				{
 					garantes.add(generarGaranteRecibo(containerGarante1, 
-							organizacionContainer1, txtPuesto1, listMoneda1, 
+							hiddenDireccionOrganizacion1, txtPuesto1, listMoneda1, 
 							txtSueldo1, txtSueldoLetras1, fechaIngreso1));
 				}
 			}
@@ -1420,7 +1455,7 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 				else
 				{
 					garantes.add(generarGaranteRecibo(containerGarante1, 
-							organizacionContainer1, txtPuesto1, listMoneda1, 
+							hiddenDireccionOrganizacion1, txtPuesto1, listMoneda1, 
 							txtSueldo1, txtSueldoLetras1, fechaIngreso1));
 				}
 				if (radioGarantia2Propiedad.getValue())
@@ -1431,7 +1466,7 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 				else
 				{
 					garantes.add(generarGaranteRecibo(containerGarante2, 
-							organizacionContainer2, txtPuesto2, listMoneda2, 
+							hiddenDireccionOrganizacion2, txtPuesto2, listMoneda2, 
 							txtSueldo2, txtSueldoLetras2, fechaIngreso2));
 				}
 			}
@@ -1445,7 +1480,7 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 				else
 				{
 					garantes.add(generarGaranteRecibo(containerGarante1, 
-							organizacionContainer1, txtPuesto1, listMoneda1, 
+							hiddenDireccionOrganizacion1, txtPuesto1, listMoneda1, 
 							txtSueldo1, txtSueldoLetras1, fechaIngreso1));
 				}
 				if (radioGarantia2Propiedad.getValue())
@@ -1456,7 +1491,7 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 				else
 				{
 					garantes.add(generarGaranteRecibo(containerGarante2, 
-							organizacionContainer2, txtPuesto2, listMoneda2, 
+							hiddenDireccionOrganizacion2, txtPuesto2, listMoneda2, 
 							txtSueldo2, txtSueldoLetras2, fechaIngreso2));
 				}
 				if (radioGarantia3Propiedad.getValue())
@@ -1467,7 +1502,7 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 				else
 				{
 					garantes.add(generarGaranteRecibo(containerGarante3, 
-							organizacionContainer3, txtPuesto3, listMoneda3, 
+							hiddenDireccionOrganizacion3, txtPuesto3, listMoneda3, 
 							txtSueldo3, txtSueldoLetras3, fechaIngreso3));
 				}
 			}
@@ -1486,16 +1521,17 @@ public class RegistrarContratoLocacion extends Registro implements EntryPoint
 	}
 	
 	private GarantiaBean generarGaranteRecibo(PersonaContainer containerGarante, 
-			OrganizacionContainer organizacionContainer, TextBox txtPuesto, 
-			ListBox listMoneda, TextBox txtMonto, TextBox txtMontoLetras, 
-			DatePicker fechaIngreso)
+			Hidden direccion, TextBox txtPuesto, ListBox listMoneda, 
+			TextBox txtMonto, TextBox txtMontoLetras, DatePicker fechaIngreso)
 	{
 		GarantiaBean garantia = new GarantiaBean();
 		garantia.setTipoGarantia(TipoGarantia.SUELDO);
 		garantia.setGarante(containerGarante.getPersona());
-		garantia.setOrganizacion(organizacionContainer.getOrganizacion());
 		StringBuilder descripcion = new StringBuilder();
-		descripcion.append("con categoría de ");
+		descripcion.append(txtOrganizacion1.getValue());
+		descripcion.append(" sito en ");
+		descripcion.append(direccion.getValue());
+		descripcion.append(" con categoría de ");
 		descripcion.append(txtPuesto.getText().trim());
 		descripcion.append(", y fecha de ingreso el ");
 		descripcion.append(fechaIngreso.getText());

@@ -35,7 +35,6 @@ public class GestorPersona {
 	
 	public Persona savePersona(PersonaBean personaBean)
 	{
-		
 		PersonaDAO personaDAO = new PersonaDAO();
 		
 		TipoDocumento tipoDocumento = new TipoDocumentoDAO().findById(Integer.
