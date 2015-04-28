@@ -1,0 +1,1 @@
+Es una aplicacion hecha con GWT para aprender el lenguaje. Espero que le sirva a alguien. Ademas usa EXT-GWT.
